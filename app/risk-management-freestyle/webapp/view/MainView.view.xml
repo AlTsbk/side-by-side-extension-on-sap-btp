@@ -1,0 +1,57 @@
+<mvc:View controllerName="riskmanagementfreestyle.controller.MainView" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+	<Page id="page" title="{i18n>title}">
+		<VBox id="pageHBox">
+			<Table id="RisksTable" items="{
+			path: '/Risks',
+			sorter: {
+				path: 'title'
+			}
+		}">
+				<columns>
+					<Column id="RiskTitleColumn" width="12em">
+						<Text id="RiskTitleColumnLabel" text="{i18n>Title}" />
+					</Column>
+					<Column id="MitigationTitleColumn" width="12em">
+						<Text id="MitigationTitleColumnLabel" text="{i18n>Mitigation}" />
+					</Column>
+					<Column id="OwnerTitleColumn" width="12em">
+						<Text id="OwnerTitleColumnLabel" text="{i18n>Owner}" />
+					</Column>
+					<Column id="PriorityTitleColumn" width="12em">
+						<Text id="PriorityTitleColumnLabel" text="{i18n>Priority}" />
+					</Column>
+					<Column id="ImpactTitleColumn" width="12em">
+						<Text id="ImpactTitleColumnLabel" text="{i18n>Impact}" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="RiskTitleColumnListItem" vAlign="Middle" press=".onTableRowPress" type="Active">
+						<cells>
+							<Text id="RiskTitleValue" text="{title}" />
+							<Text id="MitigationTitleValue" text="{miti/descr}" />
+							<Text id="OwnerTitleValue" text="{owner}" />
+							<Text id="PriorityTitleValue" text="{prio}" />
+							<Text id="ImpactTitleValue" text="{impact}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			<VBox class="sapUiSmallMargin">
+				<f:SimpleForm id="SimpleForm" editable="false" layout="ResponsiveGridLayout" title="Mitigation Details"
+					labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false"
+					emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+					singleContainerFullSize="false">
+					<f:content>
+						<Label text="Mitigation" />
+						<Text id="descr" text="{descr}" />
+						<Label text="Owner" />
+						<Text id="Owner" text="{owner}" />
+						<Label text="Timeline" />
+						<Text id="timeline" text="{timeline}" />
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+		</VBox>
+	</Page>
+</mvc:View>
