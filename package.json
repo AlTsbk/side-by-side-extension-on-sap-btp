@@ -6,7 +6,11 @@
   "license": "SAP SAMPLE CODE LICENSE",
   "repository": "https://github.com/SAP-samples/sap-learning-extension-suite",
   "dependencies": {
+<<<<<<< HEAD
     "@sap-cloud-sdk/http-client": "^3.9.0",
+=======
+    "@sap-cloud-sdk/http-client": "3.9.0",
+>>>>>>> refs/remotes/origin/main
     "@sap-cloud-sdk/resilience": "^3.8.1",
     "@sap/cds": "^7",
     "@sap/cds-hana": "^2",
@@ -17,7 +21,7 @@
   "devDependencies": {
     "@cap-js/sqlite": "^1",
     "@sap/cds-dk": "^7",
-    "@sap/ux-specification": "^1.108.18"
+    "@sap/ux-specification": "^1.120.1"
   },
   "scripts": {
     "start": "cds-serve",
